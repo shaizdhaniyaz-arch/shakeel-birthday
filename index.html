@@ -130,13 +130,7 @@ video {
   <br><br>
   <button onclick="goTo('page6')">Next 🎁</button>
 </section>
-  function showAnswer5(text){
-  // Find which answer div to fill
-  if(text.includes('Even far away')) document.getElementById('ans5').innerText = text;
-  else if(text.includes('makes my heart')) document.getElementById('ans6').innerText = text;
-  else if(text.includes('I can’t wait') || text.includes('We’ll make it happen')) document.getElementById('ans7').innerText = text;
-  else document.getElementById('ans5').innerText = text;
-  
+
 }<!-- PAGE 5: Gifts -->
 <section id="page5">
   <h2>Open Your Gifts 🎁</h2>
@@ -181,6 +175,11 @@ function showAnswer(text){
   document.getElementById('ans').innerText = text;
 }
 </script>
-
-</body>
+function showAnswer5(text){
+  // Find which answer div to fill
+  if(text.includes('Even far away')) document.getElementById('ans5').innerText = text;
+  else if(text.includes('makes my heart')) document.getElementById('ans6').innerText = text;
+  else if(text.includes('I can’t wait') || text.includes('We’ll make it happen')) document.getElementById('ans7').innerText = text;
+  else document.getElementById('ans5').innerText = text;
+}</body>
 </html>
