@@ -102,34 +102,6 @@ video {
   <div id="ans" class="answer"></div>
   <button onclick="goTo('page5')">Next 🎁</button>
 </section>
- 
-<!-- PAGE 5: Love Questions -->
-<section id="page5" style="display:none;">
-  <h2>Answer Honestly 💚</h2>
-  
-  <!-- Question 1 -->
-  <p>Do you still feel calm when you talk to me? 🫂</p>
-  <button onclick="showAnswer5('That’s us 🫂 Even far away, we’re safe with each other.')">YES</button>
-  <button onclick="showAnswer5('Oh… we need more talks then 🥹')">NO</button>
-  <div id="ans5" class="answer"></div>
-
-  <br><br>
-  <!-- Question 2 -->
-  <p>When you’re tired in the UK, do you think of me to feel better? 🌙</p>
-  <button onclick="showAnswer5('Aww 🥰 That makes my heart happy.')">YES</button>
-  <button onclick="showAnswer5('Hmm 🤭 Maybe you should think of me more 😌')">NO</button>
-  <div id="ans6" class="answer"></div>
-
-  <br><br>
-  <!-- Question 3 -->
-  <p>Will you hold me tighter when this distance finally ends? 🤍</p>
-  <button onclick="showAnswer5('I can’t wait 🥹❤️')">YES</button>
-  <button onclick="showAnswer5('We’ll make it happen soon 😌')">NO</button>
-  <div id="ans7" class="answer"></div>
-
-  <br><br>
-  <button onclick="goTo('page6')">Next 🎁</button>
-</section>
 
 }<!-- PAGE 5: Gifts -->
 <section id="page5">
@@ -177,7 +149,28 @@ function showAnswer(text){
 </script>
 function showAnswer5(text){
   // Find which answer div to fill
-  if(text.includes('Even far away')) document.getElementById('ans5').innerText = text;
+  if(text.<!-- NEW QUIZ PAGE -->
+<section id="quiz2">
+  <h2>More Questions 💖</h2>
+  
+  <p>Question 1: Even far away…?</p>
+  <button onclick="showAnswer5('Even far away, I always think of you 💕')">Yes</button>
+  <button onclick="showAnswer5('Hmm 😌 maybe a little')">No</button>
+  <div id="ans5" class="answer"></div>
+
+  <p>Question 2: Something makes my heart…?</p>
+  <button onclick="showAnswer5('makes my heart skip every time 🥰')">Yes</button>
+  <button onclick="showAnswer5('Not really 😅')">No</button>
+  <div id="ans6" class="answer"></div>
+
+  <p>Question 3: I can’t wait…?</p>
+  <button onclick="showAnswer5('I can’t wait to see you again 🥹')">Yes</button>
+  <button onclick="showAnswer5('Maybe later 😌')">No</button>
+  <div id="ans7" class="answer"></div>
+
+  <button onclick="goTo('page5')">Next 🎁</button>
+</section>
+  ('Even far away')) document.getElementById('ans5').innerText = text;
   else if(text.includes('makes my heart')) document.getElementById('ans6').innerText = text;
   else if(text.includes('I can’t wait') || text.includes('We’ll make it happen')) document.getElementById('ans7').innerText = text;
   else document.getElementById('ans5').innerText = text;
