@@ -197,4 +197,15 @@ function goTo(id){
   window.scrollTo(0,0);
 }
 function showAnswer(text){
-  document.getElementBy
+  document.getElementById('ans').innerText = text;
+}
+function showAnswer5(text){
+  if(text.includes('Even far away')) document.getElementById('ans5').innerText = text;
+  else if(text.includes('makes my heart')) document.getElementById('ans6').innerText = text;
+  else if(text.includes('I can’t wait') || text.includes('We’ll make it happen')) document.getElementById('ans7').innerText = text;
+  else document.getElementById('ans5').innerText = text;
+}
+</script>
+
+</body>
+</html>
