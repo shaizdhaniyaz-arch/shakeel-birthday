@@ -1,43 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Happy Birthday Shakeel</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Shakeel Naana</title>
 
+<!-- CSS (style inside HTML for simplicity) -->
 <style>
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(135deg, #ffdee9, #b5fffc);
   text-align: center;
+  color: #333;
 }
-
 section {
   min-height: 100vh;
-  display: none;
   padding: 40px 20px;
+  display: none;
 }
-
 section.active {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
-h1, h2 {
-  color: #d63384;
-}
-
+h1 { font-size: 48px; color: #d63384; }
+h2 { font-size: 36px; color: #d63384; }
+p { font-size: 18px; margin: 5px 0; }
 button {
   padding: 12px 25px;
+  margin: 10px;
+  border: none;
+  border-radius: 25px;
   background: #ff4d6d;
   color: white;
-  border: none;
-  border-radius: 20px;
   font-size: 16px;
   cursor: pointer;
 }
-
+button:hover { background: #e63956; }
 img {
   width: 250px;
+  border-radius: 15px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.gift {
+  font-size: 60px;
+  cursor: pointer;
+  margin: 10px;
+}
+.answer {
+  font-size: 18px;
+  margin-top: 20px;
+  color: #444;
+}
+video {
+  width: 90%;
+  max-width: 400px;
   border-radius: 15px;
   margin-top: 20px;
 }
@@ -46,30 +66,79 @@ img {
 
 <body>
 
+<!-- PAGE 1: Welcome -->
 <section id="page1" class="active">
-  <h1>🎉 Happy Birthday 🎉</h1>
-  <h2>Shakeel Naana ❤️</h2>
-  <p>Even from far away, you’re always in my heart.</p>
-  <button onclick="go('page2')">Next</button>
+  <h1>🎉 Happy 23rd Birthday 🎉</h1>
+  <h2>Shakeel Naana 💖</h2>
+  <p>18th February 2026</p>
+  <p>Even though we are far apart, my heart is always with you 🥹❤️</p>
+  <button onclick="goTo('page2')">Next 💖</button>
 </section>
 
+<!-- PAGE 2: Photo -->
 <section id="page2">
-  <h2>Birthday Boy 📸</h2>
-  <img src="photo.jpg">
-  <br><br>
-  <button onclick="go('page3')">Next</button>
+  <h2>Our Memory 📸</h2>
+  <p>Click the photo 🤍</p>
+  <img src="photo.jpg" onclick="alert('My favourite smile 😌')">
+  <button onclick="goTo('page3')">Next 🤍</button>
 </section>
 
+<!-- PAGE 3: Things I Don't Say Often -->
 <section id="page3">
-  <h2>Final Message 💖</h2>
-  <p>Happy Birthday! I hope you smile today and always.</p>
-  <button onclick="alert('Happy Birthday Shakeel Naana! 🎉')">Finish</button>
+  <h2>Things I Don’t Say Often…</h2>
+  <p>• I miss you more than I show</p>
+  <p>• Distance hurts, but it didn’t change us</p>
+  <p>• I’m proud of you</p>
+  <p>• I still choose you</p>
+  <button onclick="goTo('page4')">Next 🌙</button>
 </section>
 
+<!-- PAGE 4: Quiz -->
+<section id="page4">
+  <h2>Answer Honestly 🥹</h2>
+  <p>Do you miss me every day?</p>
+  <button onclick="showAnswer('I knew it 🥹❤️')">Yes</button>
+  <button onclick="showAnswer('Hmm 😌 I think you do')">No</button>
+  <div id="ans" class="answer"></div>
+  <button onclick="goTo('page5')">Next 🎁</button>
+</section>
+
+<!-- PAGE 5: Gifts -->
+<section id="page5">
+  <h2>Open Your Gifts 🎁</h2>
+  <div>
+    <span class="gift" onclick="alert('A hug saved for later 🤍')">🎁</span>
+    <span class="gift" onclick="alert('Distance didn’t change us')">🎁</span>
+    <span class="gift" onclick="alert('Thank you for staying ❤️')">🎁</span>
+    <span class="gift" onclick="goTo('page6')">🎁</span>
+  </div>
+</section>
+
+<!-- PAGE 6: Video -->
+<section id="page6">
+  <h2>Birthday Video 🎥</h2>
+  <p>From Sri Lanka to the UK 🥹</p>
+  <video controls src="birthday-video.mp4"></video>
+  <button onclick="goTo('page7')">Next ❤️</button>
+</section>
+
+<!-- PAGE 7: Final Message -->
+<section id="page7">
+  <h2>Forever & Always 🤍</h2>
+  <p>This website ends here…</p>
+  <p>But my love for you never will 💖</p>
+  <button onclick="alert('Happy Birthday Shakeel Naana! 🎉')">Finish 🎉</button>
+</section>
+
+<!-- JS -->
 <script>
-function go(id) {
-  document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+function goTo(id){
+  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+}
+function showAnswer(text){
+  document.getElementById('ans').innerText = text;
 }
 </script>
 
