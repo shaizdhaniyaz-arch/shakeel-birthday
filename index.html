@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday Shakeel</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ffdee9, #b5fffc);
+  text-align: center;
+}
+
+section {
+  min-height: 100vh;
+  display: none;
+  padding: 40px 20px;
+}
+
+section.active {
+  display: block;
+}
+
+h1, h2 {
+  color: #d63384;
+}
+
+button {
+  padding: 12px 25px;
+  background: #ff4d6d;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+img {
+  width: 250px;
+  border-radius: 15px;
+  margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<section id="page1" class="active">
+  <h1>🎉 Happy Birthday 🎉</h1>
+  <h2>Shakeel Naana ❤️</h2>
+  <p>Even from far away, you’re always in my heart.</p>
+  <button onclick="go('page2')">Next</button>
+</section>
+
+<section id="page2">
+  <h2>Birthday Boy 📸</h2>
+  <img src="photo.jpg">
+  <br><br>
+  <button onclick="go('page3')">Next</button>
+</section>
+
+<section id="page3">
+  <h2>Final Message 💖</h2>
+  <p>Happy Birthday! I hope you smile today and always.</p>
+  <button onclick="alert('Happy Birthday Shakeel Naana! 🎉')">Finish</button>
+</section>
+
+<script>
+function go(id) {
+  document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+</script>
+
+</body>
+</html>
